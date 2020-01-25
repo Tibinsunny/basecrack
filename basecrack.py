@@ -2,27 +2,25 @@
 # -*- coding: utf-8 -*-
 
 __author__  = "Mufeed VH"
-__version__ = "1.1.0"
+__version__ = "1.0.0"
 __email__   = "contact@mufeedvh.com"
 __github__  = "https://github.com/mufeedvh"
 
 # importing some required stuff
 import re
-import argparse
+import sys
 from termcolor import colored
-import base36
-import base58
-import base62
-import base64
-import base91
-
-# compatibility handling
-try:
+if sys.version_info[0] < 3:
+    import argparse
+    import base36
+    import base58
+    import base62
+    import base64
+    import base91
     import base92
-except ImportError:
+else:
     print(colored("\nBaseCrack is not compatible with Python3, use Python2.\n", "red"))
     quit()
-
 
 # basecrack class containing all the base decoding methods
 class BaseCrack:
